@@ -1,6 +1,8 @@
 body {
     /* background: linear-gradient( rgb(249, 191, 84), rgb(15, 11, 17)); */
     background: linear-gradient(#e66465, #9198e5);
+    height: 2000px;
+    width: auto;
     /* display: ;  */
 }
 

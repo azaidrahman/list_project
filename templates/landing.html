@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create a list
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <input type="text" placeholder="Title of list" name="title">
+        <br><br>
+        <input type="number" placeholder="Number of categories" name="number_categories">
+        <br><br>
+        <button type="submit">Create List</button>
+    </form>
+
+{% endblock %}

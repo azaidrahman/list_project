@@ -19,6 +19,26 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def hello():
-    return render_template("layout.html")
+    if request.method == "POST":
+        
+        title = request.form.get("title")
+        number = int(request.form.get("number_categories"))
+
+        return render_template("list_settings.html", title=title, number=number)
+
+    else:
+        return render_template("landing.html")
+
+@app.route("/settings", methods=["GET", "POST"])
+def settings():
+    if request.method == "POST":
+        
+        title = request.form.get("title")
+        number = int(request.form.get("number_categories"))
+
+        return render_template("list_settings.html", title=title, number=number)
+
+    else:
+        return render_template("landing.html")

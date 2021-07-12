@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Adjust list settings
+{% endblock %}
+
+{% block main %}
+    <h1>{{ title }}</h1>
+
+    {% for x in range(number) %}
+        <form method="POST">
+            <input type="text" name="category{{ x }}" placeholder="Category {{ x }}">
+        </form>
+    {% endfor %}
+{% endblock %}

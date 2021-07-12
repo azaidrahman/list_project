@@ -1,9 +1,11 @@
 import os
 from flask import Flask, flash, redirect, render_template, request, session
+
 # from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 # from werkzeug.security import check_password_hash, generate_password_hash
+import logging
 
 #Initialize application
 app = Flask(__name__)
@@ -21,24 +23,22 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 def hello():
+    categories = []
     if request.method == "POST":
         
         title = request.form.get("title")
-        number = int(request.form.get("number_categories"))
 
-        return render_template("list_settings.html", title=title, number=number)
+        for x in range(30):
+            if request.form.get(str(x)) == None:
+                exit
+            else:
+                categories.append(request.form.get(str(x)))
+        
+
+        app.logger.info(categories)
+        
+        return render_template("list.html", title=title, categories=categories)
 
     else:
         return render_template("landing.html")
 
-@app.route("/settings", methods=["GET", "POST"])
-def settings():
-    if request.method == "POST":
-        
-        title = request.form.get("title")
-        number = int(request.form.get("number_categories"))
-
-        return render_template("list_settings.html", title=title, number=number)
-
-    else:
-        return render_template("landing.html")

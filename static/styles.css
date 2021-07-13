@@ -99,12 +99,50 @@ main img
     display: none;
 }
 
-.card {
+.card_landing {
     background: var(--color-background);
     padding: calc(4 * var(--size-bezel));
     margin-top: calc(4 * var(--size-bezel));
     border-radius: 5px;
     border: 3px solid var(--color-shadow, currentColor);
     box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+    height: auto;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-  }
+.card_list_title {
+    background: var(--color-background);
+    padding: calc(4 * var(--size-bezel));
+    margin-top: calc(4 * var(--size-bezel));
+    border-radius: 5px;
+    border: 3px solid var(--color-shadow, currentColor);
+    box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+    height: auto;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card_list_title:hover {
+    background: var(--color-signal);
+}
+
+.card_list_data {
+background: var(--color-background);
+padding: calc(4 * var(--size-bezel));
+margin-top: calc(4 * var(--size-bezel));
+border-radius: 5px;
+border: 3px solid var(--color-shadow, currentColor);
+box-shadow: .5rem .1rem 0 var(--color-shadow, currentColor);
+height: auto;
+width: 100px;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+input {
+    text-align: center;
+}

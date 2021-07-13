@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create a list
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <div class="mx-auto">
+            <div class="card_landing">
+            <input type="text" placeholder="Title of list" name="title">
+            </div>
+        </div>
+        <br><br>
+        <div id="container" class="mx-auto"></div>
+        <br><br>
+        <button type="button" name="add" id="add">Add a category</button>
+        <button type="button" name="remove" id="remove">Remove a category</button>
+        <br><br>
+        <button type="submit">Create List</button>
+        
+    </form>
+
+    <script>
+        var count = 0;
+        $("#add").click(function () {
+            count++
+            $("#container").append('<div id="subc'+count+'"><div class="card_landing"><input type="text" placeholder="Category" name="'+count+'" id="'+count+'"></div></div>');
+            if (count > 0) {
+                $('#remove').show()  
+            }
+            else {
+                $('#remove').hide() 
+            }
+        });
+        $("#remove").click(function () {
+            $('#subc'+count).remove();
+            if (count === 0) {
+                $('#remove').hide()  
+            }
+            count--
+        });
+
+        $('#remove').hide();
+        
+    </script>
+
+    
+
+{% endblock %}

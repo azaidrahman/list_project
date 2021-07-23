@@ -24,6 +24,7 @@
 
 body {
     /* background: linear-gradient( rgb(249, 191, 84), rgb(15, 11, 17)); */
+<<<<<<< Updated upstream
     /* background: linear-gradient(#e66465, #9198e5); */
     background-image: url(groovy1.jpg);
     height: 100%;
@@ -31,6 +32,11 @@ body {
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
+=======
+    background: linear-gradient(#e66465, #9198e5);
+    height: 1000px;
+    width: auto;
+>>>>>>> Stashed changes
     /* display: ;  */
 }
 
